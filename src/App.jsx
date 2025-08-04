@@ -10,8 +10,8 @@ const App = () => {
       <Sidebar />
       <div className="flex-1  overflow-y-auto h-screen">
         <Routes>
-          <Route path="/" element={<Devis />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/compta-chir/devis" element={<Devis />} />
+          <Route path="/compta-chir/resume" element={<Resume />} />
         </Routes>
       </div>
     </div>
