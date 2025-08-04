@@ -7,5 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base : 'compta-chir/',
+  base : '/compta-chir/',
 });
