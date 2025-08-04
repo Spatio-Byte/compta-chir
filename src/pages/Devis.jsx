@@ -6,6 +6,8 @@ export default function Devis() {
   const [soins, setSoins] = useState([{ description: "", montant: "" }]);
   const [webhook, setWebhook] = useState(localStorage.getItem("webhook") || "");
   const [message, setMessage] = useState(null);
+  const [user, setUser] = useState("");
+
 
   const handleSoinsChange = (index, field, value) => {
     const updated = soins.map((soin, i) =>
@@ -61,7 +63,7 @@ export default function Devis() {
         value: `${s.description} — $${parseFloat(s.montant).toFixed(2)}`,
         inline: false,
       })),
-      footer: { text: `Total: $${total.toFixed(2)}` },
+      footer: { text: `Total: $${total.toFixed(2)}| User: ${user}` },
       timestamp: new Date().toISOString(),
     };
 
@@ -99,6 +101,18 @@ export default function Devis() {
             onChange={(e) => setPatient(e.target.value)}
             className="w-full rounded bg-gray-700 text-gray-100 p-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             placeholder="Nom du patient"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 font-semibold">Nom du médecin</label>
+          <input
+            type="text"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+            className="w-full rounded bg-gray-700 text-gray-100 p-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            placeholder="pseudo discord (eviter les fautes de frappes)"
             required
           />
         </div>
