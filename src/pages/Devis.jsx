@@ -79,7 +79,7 @@ export default function Devis() {
       setDate(new Date().toISOString().slice(0, 16));
       setSoins([{ description: "", montant: "" }]);
     } catch (error) {
-      setMessage({ type: "error", text: "Erreur lors de l'envoi du webhook." });
+      setMessage({ type: "error", text: `Erreur lors de l'envoi du webhook. erreur : ${error}` });
     }
   };
 
