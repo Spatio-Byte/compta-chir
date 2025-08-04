@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+.page-linked-css {
+  color : white;
+  background-color: rgba(0, 0, 0,0.2);
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.page-linked-css:hover {
+  color: hsl(224, 100%, 82%);
+  background-color: rgba(0, 0, 0,0.4);
+  transform: scale(1.05);
+}
